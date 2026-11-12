@@ -268,3 +268,56 @@ h2 {
         padding: 60px 0;
     }
 }
+
+/* Sabit sosyal medya kısayolları */
+
+.sosyal-butonlar {
+    position: fixed;
+    right: 20px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.sosyal-buton {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s;
+}
+
+.sosyal-buton:hover {
+    transform: scale(1.1);
+}
+
+.sosyal-buton svg {
+    width: 27px;
+    height: 27px;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+.whatsapp {
+    background: #25d366;
+}
+
+@media (max-width: 768px) {
+    .sosyal-butonlar {
+        right: 14px;
+        bottom: 18px;
+    }
+
+    .sosyal-buton {
+        width: 48px;
+        height: 48px;
+    }
+}
