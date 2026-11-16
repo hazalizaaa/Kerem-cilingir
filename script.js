@@ -1,23 +1,14 @@
-
-const menuButton = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".main-menu");
-
-if (menuButton && menu) {
-    menuButton.addEventListener("click", () => {
-        const isOpen = menu.classList.toggle("open");
-
-        menuButton.setAttribute("aria-expanded", String(isOpen));
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen ? "Menüyü kapat" : "Menüyü aç"
-        );
-    });
-
-    menu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            menu.classList.remove("open");
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Menüyü aç");
-        });
-    });
+const menuToggle = document.querySelector('.menu-toggle');
+const mainMenu = document.querySelector('.main-menu');
+if (menuToggle && mainMenu) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Menüyü kapat' : 'Menüyü aç');
+  });
+  mainMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    mainMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Menüyü aç');
+  }));
 }
